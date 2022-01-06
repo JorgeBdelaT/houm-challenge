@@ -1,7 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { getInitialBeers } from "../data/getInitialBeers";
+import { Beer } from "../types";
 
-const Home: NextPage = () => {
+interface HomeProps {
+  beers: Beer[];
+}
+
+// eslint-disable-next-line no-unused-vars
+const Home: NextPage<HomeProps> = ({ beers }) => {
   return (
     <div>
       <Head>
@@ -13,5 +20,10 @@ const Home: NextPage = () => {
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  const beers = await getInitialBeers();
+  return { props: { beers } };
+}
 
 export default Home;
