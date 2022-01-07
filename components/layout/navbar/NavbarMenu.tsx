@@ -46,10 +46,15 @@ const NavbarMenu = ({}) => {
           horizontal: "left",
           vertical: "top",
         }}
+        MenuListProps={{ sx: { py: 0 } }}
       >
         {pagesInfo.pages.map(({ name, path }) => (
-          <MenuItem key={name} onClick={handleCloseNavMenu}>
-            <NavbarLink activeColor="primary" name={name} path={path} />
+          <MenuItem
+            key={name}
+            onClick={handleCloseNavMenu}
+            sx={{ p: 0, minHeight: "unset" }}
+          >
+            <NavbarLink name={name} path={path} />
           </MenuItem>
         ))}
       </Menu>

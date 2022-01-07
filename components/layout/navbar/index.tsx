@@ -6,15 +6,15 @@ import NavbarMenu from "./NavbarMenu";
 import NavbarLink from "./NavbarLink";
 
 const Navbar = () => (
-  <AppBar position="static">
+  <AppBar position="sticky">
     <Container maxWidth="xl">
-      <Toolbar disableGutters>
+      <Toolbar disableGutters sx={{ minHeight: { xs: 48, md: 56 } }}>
         <NavbarMenu />
         <NavbarLogo />
         <List sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           {pagesInfo.pages.map(({ name, path }) => (
-            <ListItem key={name} sx={{ my: 2, width: "fit-content" }}>
-              <NavbarLink activeColor="white" name={name} path={path} />
+            <ListItem key={name} sx={{ width: "fit-content" }}>
+              <NavbarLink name={name} path={path} />
             </ListItem>
           ))}
         </List>
