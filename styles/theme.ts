@@ -14,6 +14,15 @@ const theme = createTheme({
       main: red.A200,
     },
   },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        "#__next": {
+          height: "100vh",
+        },
+      },
+    },
+  },
 });
 
 export default theme;

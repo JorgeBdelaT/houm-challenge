@@ -6,9 +6,7 @@ import { Beer } from "../types";
 interface AboutProps {
   beers: Beer[];
 }
-
-// eslint-disable-next-line no-unused-vars
-const About: NextPage<AboutProps> = ({ beers }) => {
+const About: NextPage<AboutProps> = ({}) => {
   return (
     <div>
       <Head>

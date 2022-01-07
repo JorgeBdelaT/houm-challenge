@@ -1,3 +1,4 @@
+import Main from "./Main";
 import Navbar from "./navbar";
 import Footer from "./Footer";
 
@@ -9,7 +10,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <Main>{children}</Main>
       <Footer />
     </>
   );

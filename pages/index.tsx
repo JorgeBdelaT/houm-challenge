@@ -7,8 +7,7 @@ interface HomeProps {
   beers: Beer[];
 }
 
-// eslint-disable-next-line no-unused-vars
-const Home: NextPage<HomeProps> = ({ beers }) => {
+const Home: NextPage<HomeProps> = ({}) => {
   return (
     <div>
       <Head>
