@@ -1,5 +1,6 @@
 import React from "react";
 import { Box } from "@mui/system";
+import styles from "./styles";
 
 interface MainProps {
   children: React.ReactElement;
@@ -7,7 +8,7 @@ interface MainProps {
 
 const Main: React.FC<MainProps> = ({ children }) => {
   return (
-    <Box component="main" sx={{ height: "100%", px: 4, py: 1 }}>
+    <Box component="main" sx={styles.main}>
       {children}
     </Box>
   );

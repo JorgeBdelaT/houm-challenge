@@ -1,6 +1,6 @@
-import Main from "./Main";
+import Footer from "./footer/index";
+import Main from "./main/index";
 import Navbar from "./navbar";
-import Footer from "./Footer";
 
 interface LayoutProps {
   children: React.ReactElement;

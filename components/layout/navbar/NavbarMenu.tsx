@@ -3,6 +3,7 @@ import { Box, IconButton, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { pagesInfo } from "../../../constants";
 import NavbarLink from "./NavbarLink";
+import styles from "./styles";
 
 const NavbarMenu = ({}) => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -18,7 +19,7 @@ const NavbarMenu = ({}) => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+    <Box sx={styles.menuBox}>
       <IconButton
         aria-controls="menu-appbar"
         aria-haspopup="true"
@@ -39,20 +40,18 @@ const NavbarMenu = ({}) => {
         keepMounted
         open={Boolean(anchorElNav)}
         onClose={handleCloseNavMenu}
-        sx={{
-          display: { xs: "block", md: "none" },
-        }}
+        sx={styles.menu}
         transformOrigin={{
           horizontal: "left",
           vertical: "top",
         }}
-        MenuListProps={{ sx: { py: 0 } }}
+        MenuListProps={styles.menuList}
       >
         {pagesInfo.pages.map(({ name, path }) => (
           <MenuItem
             key={name}
             onClick={handleCloseNavMenu}
-            sx={{ p: 0, minHeight: "unset" }}
+            sx={styles.menuItem}
           >
             <NavbarLink name={name} path={path} />
           </MenuItem>

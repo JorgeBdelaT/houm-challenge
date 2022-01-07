@@ -4,16 +4,17 @@ import { pagesInfo } from "../../../constants";
 import NavbarLogo from "./NavbarLogo";
 import NavbarMenu from "./NavbarMenu";
 import NavbarLink from "./NavbarLink";
+import styles from "./styles";
 
 const Navbar = () => (
   <AppBar position="sticky">
     <Container maxWidth="xl">
-      <Toolbar disableGutters sx={{ minHeight: { xs: 48, md: 56 } }}>
+      <Toolbar disableGutters sx={styles.toolbar}>
         <NavbarMenu />
         <NavbarLogo />
-        <List sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+        <List sx={styles.list}>
           {pagesInfo.pages.map(({ name, path }) => (
-            <ListItem key={name} sx={{ width: "fit-content" }}>
+            <ListItem key={name} sx={styles.listItem}>
               <NavbarLink name={name} path={path} />
             </ListItem>
           ))}
