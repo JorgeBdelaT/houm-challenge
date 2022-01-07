@@ -4,4 +4,7 @@ module.exports = {
   env: {
     GITHUB_URL: "https://github.com/JorgeBdelaT/houm-challenge",
   },
+  images: {
+    domains: ["images.punkapi.com"],
+  },
 };
