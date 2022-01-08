@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Box, IconButton, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { pagesInfo } from "../../../constants";
+import { PAGES_INFO } from "../../../constants";
 import NavbarLink from "./NavbarLink";
 import styles from "./styles";
 
@@ -47,7 +47,7 @@ const NavbarMenu = ({}) => {
         }}
         MenuListProps={styles.menuList}
       >
-        {pagesInfo.pages.map(({ name, path }) => (
+        {PAGES_INFO.pages.map(({ name, path }) => (
           <MenuItem
             key={name}
             onClick={handleCloseNavMenu}

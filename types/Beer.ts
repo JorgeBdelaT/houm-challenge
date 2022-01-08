@@ -3,7 +3,7 @@ import type { Method } from "./Method";
 import type { Ingredients } from "./Ingredients";
 
 export type Beer = {
-  abv: number;
+  abv?: number;
   attenuation_level: number;
   boil_volume: Metric;
   brewers_tips: string;
@@ -12,9 +12,9 @@ export type Beer = {
   ebc: number;
   first_brewed: string;
   food_pairing: string[];
-  ibu: number;
+  ibu?: number;
   id: number;
-  image_url: string;
+  image_url?: string;
   ingredients: Ingredients;
   method: Method;
   name: string;

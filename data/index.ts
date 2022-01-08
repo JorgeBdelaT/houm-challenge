@@ -1,2 +1,2 @@
 export * from "./getBeerInfo";
-export * from "./getInitialBeers";
+export * from "./getBeers";
