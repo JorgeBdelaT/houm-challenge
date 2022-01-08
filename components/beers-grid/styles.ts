@@ -7,14 +7,21 @@ const styles = {
       width: 100,
     },
   },
-
   grid: {
-    box: {
-      flexGrow: 1,
-    },
-    spacing: 2,
+    maxHeight: "90%",
+    p: 1,
+    width: "100%",
   },
+  gridBox: {
+    flexGrow: 1,
+  },
+  gridSpacing: 2,
   item: { xs: 12, md: 3 },
+  text: {
+    tagLine: { color: "text.secondary" },
+    ibu: { color: "text.secondary" },
+    abv: { color: "text.secondary" },
+  },
 };
 
 export default styles;

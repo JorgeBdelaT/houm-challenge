@@ -1,6 +1,6 @@
 import * as React from "react";
 import { AppBar, Container, Toolbar, List, ListItem } from "@mui/material";
-import { pagesInfo } from "../../../constants";
+import { PAGES_INFO } from "../../../constants";
 import NavbarLogo from "./NavbarLogo";
 import NavbarMenu from "./NavbarMenu";
 import NavbarLink from "./NavbarLink";
@@ -13,7 +13,7 @@ const Navbar = () => (
         <NavbarMenu />
         <NavbarLogo />
         <List sx={styles.list}>
-          {pagesInfo.pages.map(({ name, path }) => (
+          {PAGES_INFO.pages.map(({ name, path }) => (
             <ListItem key={name} sx={styles.listItem}>
               <NavbarLink name={name} path={path} />
             </ListItem>
