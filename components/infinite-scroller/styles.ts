@@ -5,7 +5,6 @@ const styles = {
     height: "100px",
     justifyContent: "center",
     margin: "30px",
-    maxWidth: 345,
     py: 3,
     width: "100%",
   },
