@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import BeersGrid from "../components/beers-grid";
+import BeersGrid from "../components/beers-grid/";
 import Filter from "../components/filter";
 import { getBeers } from "../data";
 import useBeers from "../hooks/useBeers";

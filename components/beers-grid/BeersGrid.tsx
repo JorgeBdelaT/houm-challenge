@@ -1,9 +1,9 @@
-import { Box, Grid } from "@mui/material";
 import React from "react";
+import { Box, Grid } from "@mui/material";
 import { Beer } from "../../types";
 import BeerCard from "./BeerCard";
 import styles from "./styles";
-import InfiniteScroller from "../infinite-scroller";
+import InfiniteScroller from "../infinite-scroller/InfiniteScroller";
 
 interface BeersGridProps {
   beers: Beer[];

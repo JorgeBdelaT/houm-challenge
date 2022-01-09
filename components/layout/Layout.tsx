@@ -1,12 +1,12 @@
 import Footer from "./footer/index";
-import Main from "./main/index";
+import Main from "./main";
 import Navbar from "./navbar";
 
 interface LayoutProps {
   children: React.ReactElement;
 }
 
-export const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Navbar />
@@ -15,3 +15,5 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     </>
   );
 };
+
+export default Layout;
