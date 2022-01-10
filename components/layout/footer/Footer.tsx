@@ -4,7 +4,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Link from "../../link";
 import styles from "./styles";
 
-export const Footer = () => (
+const Footer = () => (
   <Box component="footer" sx={styles.footer}>
     Made with <FavoriteBorderIcon sx={styles.favoriteIcon} /> by
     <Link
