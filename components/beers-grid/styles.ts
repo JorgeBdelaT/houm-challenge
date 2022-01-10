@@ -23,6 +23,7 @@ const styles = {
     p: 3,
     width: "100%",
   },
+  stack: { top: "16px", right: "16px" },
   text: {
     tagLine: { color: "text.secondary" },
     ibu: { color: "text.secondary" },
