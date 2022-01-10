@@ -1,6 +1,4 @@
 const styles = {
-  // card: { maxWidth: 345 },
-  card: {},
   cardMedia: {
     box: { display: "flex", justifyContent: "center", py: 2.5 },
     img: {
@@ -15,6 +13,16 @@ const styles = {
   },
   gridSpacing: 2,
   item: { xs: 12, md: 3 },
+  noBeers: {
+    backgroundColor: "white",
+    borderRadius: 1,
+    boxShadow: 1,
+    display: "flex",
+    fontWeight: 600,
+    justifyContent: "center",
+    p: 3,
+    width: "100%",
+  },
   text: {
     tagLine: { color: "text.secondary" },
     ibu: { color: "text.secondary" },
