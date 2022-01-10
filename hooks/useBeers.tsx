@@ -47,6 +47,7 @@ const useBeers = (initialBeers: Beer[]) => {
 
   const refetch = useCallback(async (filters?: FiltersOptions) => {
     setRefetching(true);
+    setHasNextPage(true);
     try {
       const fetchedBeers = await getBeers(1, filters);
       if (!fetchedBeers) {

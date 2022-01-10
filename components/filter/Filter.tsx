@@ -6,20 +6,31 @@ import { MAX_IBU, MIN_IBU, MAX_ABV, MIN_ABV } from "../../constants";
 import { FiltersOptions } from "../../types";
 import { parseRangeValueToArray } from "../../utils";
 
+const getDefaultValues = (value?: FiltersOptions) => {
+  if (!value)
+    return {
+      abv: { gt: undefined, lt: undefined },
+      ibu: { gt: undefined, lt: undefined },
+      name: "",
+    };
+  return value;
+};
+
 interface FilterProps {
   // eslint-disable-next-line no-unused-vars
   onFiltersChange: (newFilters: FiltersOptions) => void;
   loading: boolean;
+  selectedFilters?: FiltersOptions;
 }
 
-const Filter: React.FC<FilterProps> = ({ onFiltersChange, loading }) => {
+const Filter: React.FC<FilterProps> = ({
+  selectedFilters,
+  onFiltersChange,
+  loading,
+}) => {
   const { register, handleSubmit, control, setValue, watch } =
     useForm<FiltersOptions>({
-      defaultValues: {
-        abv: { gt: undefined, lt: undefined },
-        ibu: { gt: undefined, lt: undefined },
-        name: "",
-      },
+      defaultValues: getDefaultValues(selectedFilters),
     });
 
   const watchedIbu = watch("ibu");
