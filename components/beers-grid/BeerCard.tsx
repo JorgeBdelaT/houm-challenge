@@ -30,7 +30,7 @@ const BeerCard: React.FC<BeerCardProps> = ({ beer }) => {
   };
 
   return (
-    <Card sx={styles.card}>
+    <Card>
       <BeerCardMedia beer={beer} onClick={handleCardClick} />
       <CardContent>
         <Typography gutterBottom noWrap variant="h5" component="div">
