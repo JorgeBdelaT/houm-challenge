@@ -1,57 +1,82 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 import { PAGE_SIZE } from "../constants";
 import { getBeers } from "../data";
-import { Beer } from "../types";
+import { Beer, FiltersOptions } from "../types";
 
 const useBeers = (initialBeers: Beer[]) => {
-  const [state, setState] = useState({
-    page: 1,
-    beers: initialBeers,
-    loading: false,
-    hasNextPage: true,
-    error: false,
-  });
+  const [page, setPage] = useState(1);
+  const [beers, setbBers] = useState(initialBeers);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [refetching, setRefetching] = useState(false);
+  const [hasNextPage, setHasNextPage] = useState(true);
+  const [error, setError] = useState(false);
 
-  const loadMore = useCallback(async () => {
-    const { page } = state;
-    setState((prev) => ({ ...prev, loading: true }));
+  // TODO
+  // agregar filtros
+  const loadMore = useCallback(
+    async (filters?: FiltersOptions) => {
+      setLoadingMore(true);
+      try {
+        if (!refetching) {
+          const fetchedBeers = await getBeers(page + 1, filters);
+          if (!fetchedBeers) {
+            setError(true);
+            setbBers([]);
+            setPage(1);
+          } else if (fetchedBeers.length < PAGE_SIZE) {
+            setbBers((prevBeers) => [...prevBeers, ...fetchedBeers]);
+            setError(false);
+            setPage((prevPage) => prevPage + 1);
+            setHasNextPage(false);
+          } else {
+            setbBers((prevBeers) => [...prevBeers, ...fetchedBeers]);
+            setError(false);
+            setPage((prevPage) => prevPage + 1);
+          }
+        }
+      } catch (error) {
+        setbBers([]);
+        setError(true);
+        setPage(1);
+      } finally {
+        setLoadingMore(false);
+      }
+    },
+    [page, refetching]
+  );
+
+  const refetch = useCallback(async (filters?: FiltersOptions) => {
+    setRefetching(true);
+    setHasNextPage(true);
     try {
-      const fetchedBeers = await getBeers(page + 1);
+      const fetchedBeers = await getBeers(1, filters);
       if (!fetchedBeers) {
-        setState((prev) => ({ ...prev, error: true, beers: [], page: 1 }));
-      } else if (fetchedBeers.length < PAGE_SIZE) {
-        setState((prev) => ({
-          ...prev,
-          beers: [...prev.beers, ...fetchedBeers],
-          error: false,
-          page: prev.page + 1,
-          hasNextPage: false,
-        }));
+        setError(true);
+        setbBers([]);
+        setPage(1);
       } else {
-        setState((prev) => ({
-          ...prev,
-          beers: [...prev.beers, ...fetchedBeers],
-          error: false,
-          page: prev.page + 1,
-        }));
+        setError(false);
+        setbBers(fetchedBeers);
+        setPage(1);
       }
     } catch (error) {
-      setState((prev) => ({ ...prev, error: true, beers: [], page: 1 }));
+      setError(true);
+      setbBers([]);
+      setPage(1);
     } finally {
-      setState((prev) => ({ ...prev, loading: false }));
+      setRefetching(false);
     }
-  }, [state]);
+  }, []);
 
-  return useMemo(() => {
-    const { beers, loading, hasNextPage, error } = state;
-    return {
-      beers,
-      loading,
-      hasNextPage,
-      error,
-      loadMore,
-    };
-  }, [state, loadMore]);
+  return {
+    beers,
+    loadingMore,
+    refetching,
+    hasNextPage,
+    error,
+    loadMore,
+    refetch,
+  };
 };
 
 export default useBeers;

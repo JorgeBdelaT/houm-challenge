@@ -1,24 +1,31 @@
-import { Box, Grid } from "@mui/material";
 import React from "react";
-import useBeers from "../../hooks/useBeers";
+import { Box, Grid } from "@mui/material";
 import { Beer } from "../../types";
 import BeerCard from "./BeerCard";
 import styles from "./styles";
-import InfiniteScroller from "../infinite-scroller";
+import InfiniteScroller from "../infinite-scroller/InfiniteScroller";
 
 interface BeersGridProps {
-  initialBeers: Beer[];
+  beers: Beer[];
+  disabled: boolean;
+  hasNextPage: boolean;
+  loading: boolean;
+  loadMore: () => void;
 }
 
-const BeersGrid: React.FC<BeersGridProps> = ({ initialBeers }) => {
-  const { beers, loading, hasNextPage, error, loadMore } =
-    useBeers(initialBeers);
-
+// que el scroll sea de esta vista
+const BeersGrid: React.FC<BeersGridProps> = ({
+  beers,
+  disabled,
+  hasNextPage,
+  loadMore,
+  loading,
+}) => {
   return (
     <Box sx={styles.gridBox}>
-      <Grid container spacing={styles.gridSpacing} sx={styles.grid}>
+      <Grid container spacing={2} sx={styles.grid}>
         <InfiniteScroller
-          disabled={error}
+          disabled={disabled}
           loading={loading}
           hasNextPage={hasNextPage}
           loadMore={loadMore}

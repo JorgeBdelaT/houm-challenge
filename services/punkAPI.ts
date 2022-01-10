@@ -1,5 +1,6 @@
 import axios from "axios";
+import { API_URL } from "../constants";
 
 export default axios.create({
-  baseURL: "https://api.punkapi.com/v2/beers",
+  baseURL: API_URL,
 });

@@ -1,18 +1,16 @@
 const styles = {
-  card: { maxWidth: 345 },
+  // card: { maxWidth: 345 },
+  card: {},
   cardMedia: {
-    box: { display: "flex", justifyContent: "center" },
+    box: { display: "flex", justifyContent: "center", py: 2.5 },
     img: {
       height: 300,
       width: 100,
     },
   },
-  grid: {
-    maxHeight: "90%",
-    p: 1,
-    width: "100%",
-  },
+  grid: {},
   gridBox: {
+    maxHeight: "90%",
     flexGrow: 1,
   },
   gridSpacing: 2,
