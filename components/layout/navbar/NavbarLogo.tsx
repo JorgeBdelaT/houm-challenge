@@ -13,7 +13,7 @@ const NavbarLogo = () => {
         underline="none"
         variant="h6"
       >
-        WikiBeer
+        BrewDogBeers
       </MUILink>
     </Link>
   );
