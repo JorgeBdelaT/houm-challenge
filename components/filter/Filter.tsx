@@ -1,10 +1,32 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import * as React from "react";
-import { Box, Button, Slider, TextField } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+  Button,
+  IconButton,
+  Slider,
+  TextField,
+  Typography,
+  Tooltip,
+} from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
-import { MAX_IBU, MIN_IBU, MAX_ABV, MIN_ABV } from "../../constants";
+import { Info } from "@mui/icons-material";
+import {
+  MAX_IBU,
+  MIN_IBU,
+  MAX_ABV,
+  MIN_ABV,
+  IBU_INFO_URL,
+  ABV_INFO_URL,
+} from "../../constants";
 import { FiltersOptions } from "../../types";
 import { parseRangeValueToArray } from "../../utils";
+import styles from "./styles";
+
+import { ExpandMore } from "@mui/icons-material";
 
 const getDefaultValues = (value?: FiltersOptions) => {
   if (!value)
@@ -48,66 +70,77 @@ const Filter: React.FC<FilterProps> = ({
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        p: 2,
-        backgroundColor: "white",
-        borderRadius: 1,
-        boxShadow: 1,
-        position: "sticky",
-        top: { xs: 76, md: 84 },
-        marginBottom: 2,
-        left: 0,
-        zIndex: 1,
-      }}
-    >
-      <form onSubmit={handleSubmit(onFiltersChange)}>
-        <TextField
-          label="Beer name"
-          variant="outlined"
-          placeholder="Search by name"
-          {...register("name")}
-        />
-        <Box>
-          IBU: {watchedIbu?.gt ?? "0"} - {watchedIbu?.lt ?? "0"}
-          <Controller
-            control={control}
-            name="ibu"
-            render={() => (
-              <Slider
-                disableSwap
-                max={MAX_IBU}
-                min={MIN_IBU}
-                onChange={(e) => handleSliderChange(e, "ibu")}
-                value={parseRangeValueToArray(watchedIbu)}
-                valueLabelDisplay="auto"
-              />
-            )}
+    <Accordion sx={styles.accordeon}>
+      <AccordionSummary
+        expandIcon={<ExpandMore />}
+        aria-controls="filters-content"
+        id="filters-header"
+      >
+        <Typography>Filters</Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+        <Box
+          component="form"
+          onSubmit={handleSubmit(onFiltersChange)}
+          sx={styles.form}
+        >
+          <TextField
+            label="Beer name"
+            variant="outlined"
+            placeholder="Search by name"
+            sx={styles.nameInput}
+            {...register("name")}
           />
+          <Box sx={styles.rangeInputBox}>
+            IBU: {watchedIbu?.gt ?? "0"} - {watchedIbu?.lt ?? "0"}
+            <Tooltip arrow placeholder="bottom" title="What is IBU?">
+              <IconButton onClick={() => window.open(IBU_INFO_URL, "_blank")}>
+                <Info />
+              </IconButton>
+            </Tooltip>
+            <Controller
+              control={control}
+              name="ibu"
+              render={() => (
+                <Slider
+                  disableSwap
+                  max={MAX_IBU}
+                  min={MIN_IBU}
+                  onChange={(e) => handleSliderChange(e, "ibu")}
+                  value={parseRangeValueToArray(watchedIbu)}
+                  valueLabelDisplay="auto"
+                />
+              )}
+            />
+          </Box>
+          <Box sx={styles.rangeInputBox}>
+            ABV: {watchedAbv?.gt ?? "0"} - {watchedAbv?.lt ?? "0"}
+            <Tooltip arrow placeholder="bottom" title="What is ABV?">
+              <IconButton onClick={() => window.open(ABV_INFO_URL, "_blank")}>
+                <Info />
+              </IconButton>
+            </Tooltip>
+            <Controller
+              control={control}
+              name="abv"
+              render={() => (
+                <Slider
+                  max={MAX_ABV}
+                  min={MIN_ABV}
+                  onChange={(e) => handleSliderChange(e, "abv")}
+                  value={parseRangeValueToArray(watchedAbv)}
+                  valueLabelDisplay="auto"
+                  disableSwap
+                />
+              )}
+            />
+          </Box>
+          <Button type="submit" disabled={loading} variant="contained">
+            Apply filters
+          </Button>
         </Box>
-        <Box>
-          ABV: {watchedAbv?.gt ?? "0"} - {watchedAbv?.lt ?? "0"}
-          <Controller
-            control={control}
-            name="abv"
-            render={() => (
-              <Slider
-                max={MAX_ABV}
-                min={MIN_ABV}
-                onChange={(e) => handleSliderChange(e, "abv")}
-                value={parseRangeValueToArray(watchedAbv)}
-                valueLabelDisplay="auto"
-                disableSwap
-              />
-            )}
-          />
-        </Box>
-        <Button type="submit" disabled={loading} variant="contained">
-          Apply filters
-        </Button>
-      </form>
-    </Box>
+      </AccordionDetails>
+    </Accordion>
   );
 };
 
