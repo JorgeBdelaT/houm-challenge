@@ -1,4 +1,4 @@
-import Footer from "./footer/index";
+import Footer from "./footer";
 import Main from "./main";
 import Navbar from "./navbar";
 
