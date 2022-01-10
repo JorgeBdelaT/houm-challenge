@@ -4,7 +4,6 @@ const styles = {
     alignItems: { xs: "stretch", md: "center" },
     backgroundColor: "white",
     display: "flex",
-    flexDirection: { xs: "column", md: "row" },
     gap: { sx: 1, md: 3 },
     justifyContent: { xs: "flex-start", md: "space-between" },
   },

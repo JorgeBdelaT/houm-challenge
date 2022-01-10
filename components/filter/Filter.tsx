@@ -82,7 +82,7 @@ const Filter: React.FC<FilterProps> = ({
         <Box
           component="form"
           onSubmit={handleSubmit(onFiltersChange)}
-          sx={styles.form}
+          sx={{ ...styles.form, flexDirection: { xs: "column", md: "row" } }}
         >
           <TextField
             label="Beer name"
