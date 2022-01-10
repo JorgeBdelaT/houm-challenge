@@ -39,12 +39,6 @@ const BeerCard: React.FC<BeerCardProps> = ({ beer }) => {
         <Typography noWrap variant="body1" color={styles.text.tagLine}>
           {beer.tagline}
         </Typography>
-        <Typography variant="body2" color={styles.text.ibu}>
-          IBU: {beer.ibu ?? "----"}
-        </Typography>
-        <Typography variant="body2" color={styles.text.abv}>
-          ABV: {beer.abv ?? "----"}
-        </Typography>
       </CardContent>
       <CardActions>
         <IconButton
