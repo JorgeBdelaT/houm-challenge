@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { FILTERS } from "./constants";
-import { FiltersOptions, RangeFilterOption } from "./types";
+import { FiltersOptions, RangeFilterOption, Hop, Malt } from "./types";
 
 // FIX
 export const addFiltersToUrl = (
@@ -26,6 +26,17 @@ export const addFiltersToUrl = (
   });
   return url.concat(filterString);
 };
+
+export const getNoRepeatedIngredients = (
+  ingredients: Hop[] | Malt[]
+): Hop[] | Malt[] =>
+  ingredients
+    // @ts-ignore
+    .reduce((acc: Hop[] | Malt[], curr: Hop | Malt) => {
+      // @ts-ignore
+      if (acc.findIndex(({ name }) => name === curr.name) < 0) acc.push(curr);
+      return acc;
+    }, []);
 
 export const parseRangeValueToArray = (
   rangeObj?: RangeFilterOption<number>

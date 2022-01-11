@@ -1,9 +1,12 @@
 import React from "react";
-import { Box, Grid } from "@mui/material";
-import { Beer } from "../../types";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import { Beer, FavoriteBeers } from "../../types";
+import { useLocalStorage } from "../../hooks";
+import { FAVORITES_BEER_KEY } from "../../constants";
 import BeerCard from "./BeerCard";
 import styles from "./styles";
-import InfiniteScroller from "../infinite-scroller";
+import InfiniteScroller from "../infinite-scroller/InfiniteScroller";
 import NoBeers from "./NoBeers";
 
 interface BeersGridProps {
@@ -21,6 +24,19 @@ const BeersGrid: React.FC<BeersGridProps> = ({
   loadMore,
   loading,
 }) => {
+  const [favoriteBeers, setFavoriteBeers] = useLocalStorage<FavoriteBeers>(
+    FAVORITES_BEER_KEY,
+    []
+  );
+
+  const addBeerToFavorites = (id: number) => {
+    if (favoriteBeers.includes(id)) {
+      setFavoriteBeers(favoriteBeers.filter((favId) => favId !== id));
+    } else {
+      setFavoriteBeers([...favoriteBeers, id]);
+    }
+  };
+
   return (
     <Box sx={styles.gridBox}>
       {!beers.length ? (
@@ -35,7 +51,11 @@ const BeersGrid: React.FC<BeersGridProps> = ({
           >
             {beers.map((beer) => (
               <Grid item xs={styles.item.xs} key={beer.id} md={styles.item.md}>
-                <BeerCard beer={beer} />
+                <BeerCard
+                  beer={beer}
+                  isFavorite={favoriteBeers.includes(beer.id)}
+                  addBeerToFavorites={addBeerToFavorites}
+                />
               </Grid>
             ))}
           </InfiniteScroller>

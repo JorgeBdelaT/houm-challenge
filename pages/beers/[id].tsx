@@ -1,6 +1,6 @@
 import type { NextPage, GetServerSidePropsContext } from "next";
 import Head from "next/head";
-import BeerInfo from "../../components/beer-info";
+import BeerInfo from "../../components/beer-info/BeerInfo";
 import { getBeerInfo } from "../../data";
 import type { Beer } from "../../types";
 

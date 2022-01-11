@@ -1,9 +1,15 @@
 import React, { useCallback } from "react";
-import { Box, Chip, List, ListItem, Stack, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Chip from "@mui/material/Chip";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { Beer } from "../../types";
 import { NO_BEER_IMG_URL } from "../../constants";
 import styles from "./styles";
+import { getNoRepeatedIngredients } from "../../utils";
 
 interface BeerInfoProps {
   beer: Beer;
@@ -25,7 +31,7 @@ const BeerInfo: React.FC<BeerInfoProps> = ({ beer }) => {
             sx={styles.stack}
           >
             <Typography variant="body2">Hops:</Typography>
-            {hops.map(({ name }) => (
+            {getNoRepeatedIngredients(hops).map(({ name }) => (
               <Chip key={name} label={name} sx={styles.chip} />
             ))}
           </Stack>
@@ -38,7 +44,7 @@ const BeerInfo: React.FC<BeerInfoProps> = ({ beer }) => {
             sx={styles.stack}
           >
             <Typography variant="body2">Malts:</Typography>
-            {malt.map(({ name }) => (
+            {getNoRepeatedIngredients(malt).map(({ name }) => (
               <Chip key={name} label={name} sx={styles.chip} />
             ))}
           </Stack>

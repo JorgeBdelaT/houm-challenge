@@ -1,5 +1,8 @@
 import * as React from "react";
-import { Box, CardActionArea, Chip, Stack } from "@mui/material";
+import Box from "@mui/material/Box";
+import CardActionArea from "@mui/material/CardActionArea";
+import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
 import Image from "next/image";
 import { Beer } from "../../types";
 import { NO_BEER_IMG_URL } from "../../constants";

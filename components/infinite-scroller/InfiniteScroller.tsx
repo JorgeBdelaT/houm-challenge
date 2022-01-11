@@ -1,5 +1,6 @@
-import { CircularProgress } from "@mui/material";
-import { Box } from "@mui/system";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./styles";
 

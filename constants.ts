@@ -1,6 +1,7 @@
 export const ABV_INFO_URL =
   "https://www.webstaurantstore.com/blog/3620/what-is-abv.html";
 export const API_URL = "https://api.punkapi.com/v2/beers";
+export const FAVORITES_BEER_KEY = "FAVORITES_BEER_KEY";
 export const FILTERS = {
   abv: { gt: "abv_gt", lt: "abv_lt" },
   brewed: { gt: "brewed_after", lt: "brewed_before" },
