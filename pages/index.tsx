@@ -1,18 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BeersGrid from "../components/beers-grid/BeersGrid";
 import Filter from "../components/filter/Filter";
 import ScrollToTopButton from "../components/scroll-to-top-button/ScrollToTopButton";
-import { getBeers } from "../data";
 import useBeers from "../hooks/useBeers";
-import { Beer, FiltersOptions } from "../types";
+import { FiltersOptions } from "../types";
 
-interface HomeProps {
-  initialBeers: Beer[];
-}
-
-const Home: NextPage<HomeProps> = ({ initialBeers }) => {
+const Home: NextPage = () => {
   const {
     beers,
     loadingMore,
@@ -21,7 +16,7 @@ const Home: NextPage<HomeProps> = ({ initialBeers }) => {
     error,
     loadMore,
     refetch,
-  } = useBeers(initialBeers);
+  } = useBeers([]);
 
   const [filters, setFilters] = useState<FiltersOptions | undefined>(undefined);
 
@@ -29,6 +24,10 @@ const Home: NextPage<HomeProps> = ({ initialBeers }) => {
     refetch(newFilters);
     setFilters(newFilters);
   };
+
+  useEffect(() => {
+    refetch();
+  }, [refetch]);
 
   return (
     <div>
@@ -53,11 +52,5 @@ const Home: NextPage<HomeProps> = ({ initialBeers }) => {
     </div>
   );
 };
-
-export async function getServerSideProps() {
-  const initialBeers = await getBeers();
-  if (!initialBeers) return { notFound: true };
-  return { props: { initialBeers } };
-}
 
 export default Home;
