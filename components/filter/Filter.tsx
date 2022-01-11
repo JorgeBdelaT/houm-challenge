@@ -29,8 +29,8 @@ import { ExpandMore } from "@mui/icons-material";
 const getDefaultValues = (value?: FiltersOptions) => {
   if (!value)
     return {
-      abv: { gt: undefined, lt: undefined },
-      ibu: { gt: undefined, lt: undefined },
+      abv: { gt: MIN_ABV, lt: MAX_ABV },
+      ibu: { gt: MIN_IBU, lt: MAX_IBU },
       name: "",
     };
   return value;
