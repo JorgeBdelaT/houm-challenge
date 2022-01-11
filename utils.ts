@@ -34,7 +34,7 @@ export const getNoRepeatedIngredients = (
     // @ts-ignore
     .reduce((acc: Hop[] | Malt[], curr: Hop | Malt) => {
       // @ts-ignore
-      if (acc.findIndex(({ name }) => name !== curr.name)) acc.push(curr);
+      if (acc.findIndex(({ name }) => name === curr.name) < 0) acc.push(curr);
       return acc;
     }, []);
 
