@@ -1,11 +1,11 @@
 import { Metric } from "./Metric";
 
-type Malt = {
+export type Malt = {
   amount: Metric;
   name: string;
 };
 
-type Hop = {
+export type Hop = {
   add: string;
   amount: Metric;
   attribute: string;
