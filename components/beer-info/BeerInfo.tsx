@@ -1,5 +1,10 @@
 import React, { useCallback } from "react";
-import { Box, Chip, List, ListItem, Stack, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Chip from "@mui/material/Chip";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { Beer } from "../../types";
 import { NO_BEER_IMG_URL } from "../../constants";

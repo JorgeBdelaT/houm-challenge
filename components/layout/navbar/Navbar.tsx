@@ -1,5 +1,9 @@
 import * as React from "react";
-import { AppBar, Container, Toolbar, List, ListItem } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Container from "@mui/material/Container";
+import Toolbar from "@mui/material/Toolbar";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
 import { PAGES_INFO } from "../../../constants";
 import NavbarLogo from "./NavbarLogo";
 import NavbarMenu from "./NavbarMenu";

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link as MUILink } from "@mui/material";
+import MUILink from "@mui/material/Link";
 import Link from "next/link";
 import styles from "./styles";
 
