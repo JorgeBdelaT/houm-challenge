@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/system";
+import Box from "@mui/material/Box";
 import styles from "./styles";
 
 interface MainProps {

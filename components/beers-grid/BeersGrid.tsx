@@ -1,11 +1,12 @@
 import React from "react";
-import { Box, Grid } from "@mui/material";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import { Beer, FavoriteBeers } from "../../types";
 import { useLocalStorage } from "../../hooks";
 import { FAVORITES_BEER_KEY } from "../../constants";
 import BeerCard from "./BeerCard";
 import styles from "./styles";
-import InfiniteScroller from "../infinite-scroller";
+import InfiniteScroller from "../infinite-scroller/InfiniteScroller";
 import NoBeers from "./NoBeers";
 
 interface BeersGridProps {

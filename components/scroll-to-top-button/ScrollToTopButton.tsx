@@ -1,5 +1,5 @@
-import { IconButton } from "@mui/material";
-import { ArrowUpward } from "@mui/icons-material";
+import IconButton from "@mui/material/IconButton";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import styles from "./styles";
 
 const ScrollToTopButton = () => {
@@ -12,7 +12,7 @@ const ScrollToTopButton = () => {
       aria-label="scroll-to-top"
       sx={{ ...styles.iconBtn, position: "fixed" }}
     >
-      <ArrowUpward />
+      <ArrowUpwardIcon />
     </IconButton>
   );
 };

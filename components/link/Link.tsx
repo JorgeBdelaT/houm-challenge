@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Link as MUILink, SxProps, Theme } from "@mui/material";
+import MUILink from "@mui/material/Link";
+import { SxProps, Theme } from "@mui/material/styles";
 import NextLink from "next/link";
 
 interface NavbarLinkProps {

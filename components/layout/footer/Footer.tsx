@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import Link from "../../link";
+import Link from "../../link/Link";
 import styles from "./styles";
 
 const Footer = () => (

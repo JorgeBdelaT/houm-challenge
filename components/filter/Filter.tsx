@@ -1,19 +1,17 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import * as React from "react";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  Button,
-  IconButton,
-  Slider,
-  TextField,
-  Typography,
-  Tooltip,
-} from "@mui/material";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import Slider from "@mui/material/Slider";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import Tooltip from "@mui/material/Tooltip";
 import { Controller, useForm } from "react-hook-form";
-import { Info } from "@mui/icons-material";
+import InfoIcon from "@mui/icons-material/Info";
 import {
   MAX_IBU,
   MIN_IBU,
@@ -95,7 +93,7 @@ const Filter: React.FC<FilterProps> = ({
             IBU: {watchedIbu?.gt ?? "0"} - {watchedIbu?.lt ?? "0"}
             <Tooltip arrow placeholder="bottom" title="What is IBU?">
               <IconButton onClick={() => window.open(IBU_INFO_URL, "_blank")}>
-                <Info />
+                <InfoIcon />
               </IconButton>
             </Tooltip>
             <Controller
@@ -117,7 +115,7 @@ const Filter: React.FC<FilterProps> = ({
             ABV: {watchedAbv?.gt ?? "0"} - {watchedAbv?.lt ?? "0"}
             <Tooltip arrow placeholder="bottom" title="What is ABV?">
               <IconButton onClick={() => window.open(ABV_INFO_URL, "_blank")}>
-                <Info />
+                <InfoIcon />
               </IconButton>
             </Tooltip>
             <Controller

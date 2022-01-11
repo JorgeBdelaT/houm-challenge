@@ -1,8 +1,8 @@
-import { Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Link from "../components/link";
+import Link from "../components/link/Link";
 import styles from "../styles/pages/styles";
 
 const About: NextPage = () => {

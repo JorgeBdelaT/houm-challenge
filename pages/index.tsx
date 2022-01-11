@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
-import BeersGrid from "../components/beers-grid/";
-import Filter from "../components/filter";
-import ScrollToTopButton from "../components/scroll-to-top-button";
+import BeersGrid from "../components/beers-grid/BeersGrid";
+import Filter from "../components/filter/Filter";
+import ScrollToTopButton from "../components/scroll-to-top-button/ScrollToTopButton";
 import { getBeers } from "../data";
 import useBeers from "../hooks/useBeers";
 import { Beer, FiltersOptions } from "../types";

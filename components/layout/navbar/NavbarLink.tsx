@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useRouter } from "next/router";
-import Link from "../../link";
+import Link from "../../link/Link";
 import styles from "./styles";
 
 interface NavbarLinkProps {
