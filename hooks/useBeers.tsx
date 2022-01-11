@@ -3,7 +3,7 @@ import { PAGE_SIZE } from "../constants";
 import { getBeers } from "../data";
 import { Beer, FiltersOptions } from "../types";
 
-const useBeers = (initialBeers: Beer[]) => {
+export const useBeers = (initialBeers: Beer[]) => {
   const [page, setPage] = useState(1);
   const [beers, setbBers] = useState(initialBeers);
   const [loadingMore, setLoadingMore] = useState(false);
@@ -11,8 +11,6 @@ const useBeers = (initialBeers: Beer[]) => {
   const [hasNextPage, setHasNextPage] = useState(true);
   const [error, setError] = useState(false);
 
-  // TODO
-  // agregar filtros
   const loadMore = useCallback(
     async (filters?: FiltersOptions) => {
       setLoadingMore(true);
