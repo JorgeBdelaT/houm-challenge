@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Card,
@@ -15,19 +15,30 @@ import styles from "./styles";
 
 interface BeerCardProps {
   beer: Beer;
+  isFavorite: boolean;
+  // eslint-disable-next-line no-unused-vars
+  addBeerToFavorites: (id: number) => void;
 }
 
-const BeerCard: React.FC<BeerCardProps> = ({ beer }) => {
+const BeerCard: React.FC<BeerCardProps> = ({
+  beer,
+  addBeerToFavorites,
+  isFavorite,
+}) => {
   const router = useRouter();
-
-  const handleAddToFavorites = () => {
-    // eslint-disable-next-line no-console
-    console.log("liked: " + beer.name);
-  };
 
   const handleCardClick = () => {
     router.push(`/beers/${beer.id}`);
   };
+
+  const [favIconColor, setFavIconColor] = useState<"secondary" | "primary">(
+    "secondary"
+  );
+
+  useEffect(
+    () => setFavIconColor(isFavorite ? "primary" : "secondary"),
+    [isFavorite]
+  );
 
   return (
     <Card>
@@ -43,9 +54,9 @@ const BeerCard: React.FC<BeerCardProps> = ({ beer }) => {
       <CardActions>
         <IconButton
           aria-label="add to favorites"
-          onClick={handleAddToFavorites}
+          onClick={() => addBeerToFavorites(beer.id)}
         >
-          <FavoriteIcon />
+          <FavoriteIcon color={favIconColor} />
         </IconButton>
         <Button onClick={handleCardClick} size="small">
           Learn More
