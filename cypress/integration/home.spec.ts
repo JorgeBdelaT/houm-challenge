@@ -15,7 +15,7 @@ context("Home Page", () => {
   });
 
   it("should navigate to the about page", () => {
-    cy.get(`a[href*="${Cypress.env("homePath")}"]`)
+    cy.get(`a[href*="${Cypress.env("aboutPath")}"]`)
       .contains("About")
       .click();
     cy.url().should("eq", Cypress.env("aboutUrl"));
