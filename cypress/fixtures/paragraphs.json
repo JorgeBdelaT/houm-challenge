@@ -1,0 +1,4 @@
+[
+  "BrewDogBeers is an application that allows you to list all the beers from the BrewDog brewery. You can also filter by name, IBU level and ABV. You can also access more information about a beer, such as its description, ingredients (hops, yeasts and malts), recommendations and dishes to pair it with.",
+  "The application is based on the punkAPI that delivers information about different beers. The motivation for the API is that one of BrewDog's most popular beers is the Punk IPA, hence the name of the API."
+]
