@@ -1,0 +1,27 @@
+{
+  "id": 1,
+  "abv": 4.5,
+  "brewers_tips": "The earthy and floral aromas from the hops can be overpowering. Drop a little Cascade in at the end of the boil to lift the profile with a bit of citrus.",
+  "description": "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
+  "food_pairing": [
+    "Spicy chicken tikka masala",
+    "Grilled chicken quesadilla",
+    "Caramel toffee cake"
+  ],
+  "ibu": 60,
+  "image_url": "https://images.punkapi.com/v2/keg.png",
+  "ingredients": {
+    "hops": [
+      { "name": "Fuggles" },
+      { "name": "First Gold" },
+      { "name": "Cascade" }
+    ],
+    "malt": [
+      { "name": "Maris Otter Extra Pale" },
+      { "name": "Caramalt" },
+      { "name": "Munich" }
+    ],
+    "yeast": "Wyeast 1056 - American Ale™"
+  },
+  "name": "Buzz"
+}
