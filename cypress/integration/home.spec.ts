@@ -10,7 +10,7 @@ context("Home Page", () => {
     });
   });
 
-  it("should render the home page and display filters", () => {
+  it("should render the home page and display filters box", () => {
     cy.get("p").contains("Filters");
   });
 
