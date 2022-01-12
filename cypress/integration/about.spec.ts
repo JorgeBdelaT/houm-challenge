@@ -15,7 +15,7 @@ context("About Page", () => {
     });
     cy.get(`a[href*="${Cypress.env("brewdogUrl")}"]`);
     cy.get(`a[href*="${Cypress.env("punkApiDocumentationUrl")}"`);
-    cy.get(`a[href*="${Cypress.env("punkIpa")}"]`);
+    cy.get(`a[href*="${Cypress.env("punkIpaUrl")}"]`);
   });
 
   it("should navigate to the home page", () => {
