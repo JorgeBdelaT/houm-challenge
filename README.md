@@ -123,9 +123,12 @@ yarn build
 # correr build
 yarn start
 
-# abrir consola de cypress
-yarn test
+# correr tests por medio de consola de cypress
+yarn e2e
 
-# generar coverage
-yarn [TODO: generar coverage]
+# o correr desde la terminal, se debe haber hecho build
+yarn e2e:headless
+
+# mostrar coverage en terminal, se deben haber corrido los tests antes
+yarn e2e:coverage
 ```
