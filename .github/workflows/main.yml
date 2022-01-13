@@ -15,7 +15,3 @@ jobs:
         with:
           build: npm run build
           start: npm start
-      - name: Coverage
-        uses: actions/checkout@v2
-        with:
-          command: yarn coverage
