@@ -1,7 +1,7 @@
 import type { NextPage, GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import BeerInfo from "../../components/beer-info/BeerInfo";
-import { getBeerInfo } from "../../data";
+import { getAllBeers } from "../../data";
 import type { Beer } from "../../types";
 
 interface BeerProps {
@@ -21,11 +21,22 @@ const Beer: NextPage<BeerProps> = ({ beer }) => {
   );
 };
 
-export async function getServerSideProps(
+export async function getStaticPaths() {
+  const allBeers = await getAllBeers();
+  return {
+    paths: allBeers?.map((beer) => ({ params: { id: beer.id.toString() } })),
+    fallback: false, // false or 'blocking'
+  };
+}
+
+export async function getStaticProps(
   context: GetServerSidePropsContext<{ id: string }>
 ) {
   const { params } = context;
-  const beer = await getBeerInfo(parseInt(params?.id ?? "", 10));
+  const allBeers = await getAllBeers();
+  const beer = allBeers?.find(
+    ({ id }) => id === parseInt(params?.id ?? "", 10)
+  );
   if (!beer) return { notFound: true };
   return { props: { beer } };
 }
