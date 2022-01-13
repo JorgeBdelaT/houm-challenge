@@ -1,0 +1,14 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "experimentalStudio": true,
+  "env": {
+    "aboutPath": "/about",
+    "aboutUrl": "http://localhost:3000/about",
+    "brewdogUrl": "https://www.brewdog.com/uk/community/culture/our-history",
+    "homePath": "/",
+    "homeUrl": "http://localhost:3000/",
+    "punkApiDocumentationUrl": "https://punkapi.com/documentation/v2",
+    "punkApiUrl": "https://api.punkapi.com/v2/beers",
+    "punkIpaUrl": "https://www.brewdog.com/uk/punk-ipa-4-can"
+  }
+}

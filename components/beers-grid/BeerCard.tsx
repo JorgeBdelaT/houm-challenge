@@ -14,7 +14,6 @@ import styles from "./styles";
 interface BeerCardProps {
   beer: Beer;
   isFavorite: boolean;
-  // eslint-disable-next-line no-unused-vars
   addBeerToFavorites: (id: number) => void;
 }
 

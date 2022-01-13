@@ -10,7 +10,6 @@ export const useLocalStorage = <T,>(key: string, initialValue: T) => {
     }
   });
 
-  // eslint-disable-next-line no-unused-vars
   const setValue = (value: T | ((val: T) => T)) => {
     const valueToStore = value instanceof Function ? value(storedValue) : value;
     setStoredValue(valueToStore);
