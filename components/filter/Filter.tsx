@@ -37,7 +37,6 @@ const getDefaultValues = (value?: FiltersOptions) => {
 };
 
 interface FilterProps {
-  // eslint-disable-next-line no-unused-vars
   onFiltersChange: (newFilters: FiltersOptions) => void;
   loading: boolean;
   selectedFilters?: FiltersOptions;
@@ -102,6 +101,7 @@ const Filter: React.FC<FilterProps> = ({
               render={() => (
                 <Slider
                   disableSwap
+                  id="ibu-range"
                   max={MAX_IBU}
                   min={MIN_IBU}
                   onChange={(e) => handleSliderChange(e, "ibu")}
@@ -123,12 +123,13 @@ const Filter: React.FC<FilterProps> = ({
               name="abv"
               render={() => (
                 <Slider
+                  disableSwap
+                  id="abv-range"
                   max={MAX_ABV}
                   min={MIN_ABV}
                   onChange={(e) => handleSliderChange(e, "abv")}
                   value={parseRangeValueToArray(watchedAbv)}
                   valueLabelDisplay="auto"
-                  disableSwap
                 />
               )}
             />

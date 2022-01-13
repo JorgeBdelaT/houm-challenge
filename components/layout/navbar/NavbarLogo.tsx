@@ -6,13 +6,7 @@ import styles from "./styles";
 const NavbarLogo = () => {
   return (
     <Link passHref href="/">
-      <MUILink
-        noWrap
-        component="div"
-        sx={styles.logo}
-        underline="none"
-        variant="h6"
-      >
+      <MUILink noWrap sx={styles.logo} underline="none" variant="h6">
         BrewDogBeers
       </MUILink>
     </Link>
