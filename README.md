@@ -28,7 +28,7 @@ También se implemento un template para las pull requests donde se debe especifi
 
 Se han implementado las siguientes 3 vistas:
 
-### 1. [Home](https://houm-challenge-od1x0clkv-jorgebdelat.vercel.app/)
+### 1. [Home](https://houm-challenge-one.vercel.app//)
 
 Vista principal de la aplicación, implementada haciendo uso de SSG para cargar la página con las primeras 10 cervezas. Luego al hacer scroll, las siguientes cervezas son solicitadas por el cliente, lo mismo con la aplicación de filtros.
 
@@ -38,11 +38,11 @@ En esta vista se pueden filtrar las cervezas por una combinación de las siguien
 2. Por rango de [IBU](https://beerandbrewing.com/dictionary/eej03p6ZUI/)
 3. Por rango de [ABV](https://www.webstaurantstore.com/blog/3620/what-is-abv.html)
 
-### 2. [About](https://houm-challenge-od1x0clkv-jorgebdelat.vercel.app/about)
+### 2. [About](https://houm-challenge-one.vercel.app//about)
 
 Vista con información general sobre la motivación y el por qué de la aplicación. Realizada como una página estática.
 
-### 3. [Beer by id](https://houm-challenge-od1x0clkv-jorgebdelat.vercel.app/beers/1)
+### 3. [Beer by id](https://houm-challenge-one.vercel.app//beers/1)
 
 Vista que contiene la información en detalle de una cerveza, implementada haciendo uso de SSG. Se puede conocer su nombre, IBU, ABV, descripción, tips del cervecere y comidas con las que acompañarla.
 
