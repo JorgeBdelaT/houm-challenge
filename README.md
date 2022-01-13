@@ -111,6 +111,10 @@ Se han implementado tests e2e por medio de `cypress` para cada una de las vistas
   - should navigate to the home page
   - should navigate to the home page by clicking the logo
 
+A continuación se muestran los resultados del coverage luego de correr `yarn e2e:headless`
+
+![Alt text](./docs/coverage.png "Title")
+
 ## Comandos
 
 ```bash
@@ -122,6 +126,9 @@ yarn build
 
 # correr build
 yarn start
+
+# borrar resultados anteriores de coverage y build
+yarn pre-e2e
 
 # correr tests por medio de consola de cypress
 yarn e2e
