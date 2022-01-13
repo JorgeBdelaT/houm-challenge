@@ -18,4 +18,4 @@ jobs:
       - name: Coverage
         uses: actions/checkout@v2
         with:
-          coverage: npm run coverage
+          command: yarn coverage
