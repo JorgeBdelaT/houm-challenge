@@ -2,7 +2,7 @@
 
 Aplicación web desarrollada para el desafío técnico de [Houm](https://houm.com/cl) para el cargo de Frontend Engineer. El desafío requiere consumir una API y mostrar su información en _hero cards_. Además de permitir filtros y mostrar de a 10 elementos. Para lograr la paginación se implemento un scroll infinito.
 
-La aplicación se llama BrewdogBeers y permite visualizar las distintas cervezas de la cervecería [Breewdog](https://www.brewdog.com/uk/community/culture/our-history). Se escogió este tema pues una de sus cervezas más conocidas es la [Punk IPA](https://www.brewdog.com/uk/punk-ipa-4-can) y a su vez existe una API llamada [Punk API](https://punkapi.com/documentation/v2). Esta de más agregar que me gustan mucho las cervezas jajajaj [TODO: agregar emojis].
+La aplicación se llama BrewdogBeers y permite visualizar las distintas cervezas de la cervecería [Breewdog](https://www.brewdog.com/uk/community/culture/our-history). Se escogió este tema pues una de sus cervezas más conocidas es la [Punk IPA](https://www.brewdog.com/uk/punk-ipa-4-can) y a su vez existe una API llamada [Punk API](https://punkapi.com/documentation/v2). Esta de más agregar que me gusta mucho la cerveza jajajaj :joy::beer:.
 
 ---
 
@@ -44,7 +44,7 @@ Vista con información general sobre la motivación y el por qué de la aplicaci
 
 ### 3. [Beer by id](https://houm-challenge-od1x0clkv-jorgebdelat.vercel.app/beers/1)
 
-Vista que contiene la información en detalle de una cerveza, implementada haciendo uso de SSG. [TODO: implementar SSG xd]. Se puede conocer su nombre, IBU, ABV, descripción, tips del cervecero y comidas con las que acompañarla.
+Vista que contiene la información en detalle de una cerveza, implementada haciendo uso de SSG. Se puede conocer su nombre, IBU, ABV, descripción, tips del cervecere y comidas con las que acompañarla.
 
 ---
 
