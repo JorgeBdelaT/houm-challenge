@@ -18,6 +18,7 @@ context("Home Page", () => {
     cy.get(`a[href*="${Cypress.env("aboutPath")}"]`)
       .contains("About")
       .click();
+    cy.wait(2000);
     cy.url().should("eq", Cypress.env("aboutUrl"));
     cy.get("h5").contains("What is BrewDogBeers?");
   });
@@ -105,7 +106,7 @@ context("Home Page", () => {
     cy.get("button").contains("Apply filters");
   });
 
-  it("should apply name filter correctly", () => {
+  it("should apply name filter correctly", { scrollBehavior: false }, () => {
     const searchParam = "Blonde";
 
     cy.intercept({

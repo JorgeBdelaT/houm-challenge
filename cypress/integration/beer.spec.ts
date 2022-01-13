@@ -2,12 +2,10 @@
 
 context("Beer by id Page", () => {
   beforeEach(function () {
-    let beerId;
     cy.fixture("beer").then((beer) => {
-      beerId = beer.id;
       this.beer = beer;
     });
-    cy.visit(`/beers/${beerId}`);
+    cy.visit("/beers/1");
   });
 
   it("should display beer name correctly", function () {
@@ -60,6 +58,7 @@ context("Beer by id Page", () => {
     cy.get(`a[href*="${Cypress.env("aboutPath")}"]`)
       .contains("About")
       .click();
+    cy.wait(2000);
     cy.url().should("eq", Cypress.env("aboutUrl"));
     cy.get("h5").contains("What is BrewDogBeers?");
   });
@@ -68,6 +67,7 @@ context("Beer by id Page", () => {
     cy.get(`a[href*="${Cypress.env("homePath")}"]`)
       .contains("Home")
       .click();
+    cy.wait(2000);
     cy.url().should("eq", Cypress.env("homeUrl"));
     cy.get("p").contains("Filters");
   });
@@ -76,6 +76,7 @@ context("Beer by id Page", () => {
     cy.get(`a[href*="${Cypress.env("homePath")}"]`)
       .contains("BrewDogBeers")
       .click();
+    cy.wait(2000);
     cy.url().should("eq", Cypress.env("homeUrl"));
     cy.get("p").contains("Filters");
   });

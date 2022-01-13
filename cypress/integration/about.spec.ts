@@ -22,6 +22,7 @@ context("About Page", () => {
     cy.get(`a[href*="${Cypress.env("homePath")}"]`)
       .contains("Home")
       .click();
+    cy.wait(2000);
     cy.url().should("eq", Cypress.env("homeUrl"));
     cy.get("p").contains("Filters");
   });
@@ -30,6 +31,7 @@ context("About Page", () => {
     cy.get(`a[href*="${Cypress.env("homePath")}"]`)
       .contains("BrewDogBeers")
       .click();
+    cy.wait(2000);
     cy.url().should("eq", Cypress.env("homeUrl"));
     cy.get("p").contains("Filters");
   });

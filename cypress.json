@@ -3,6 +3,7 @@
   "experimentalStudio": true,
   "env": {
     "aboutPath": "/about",
+    "aboutUrl": "http://localhost:3000/about",
     "brewdogUrl": "https://www.brewdog.com/uk/community/culture/our-history",
     "homePath": "/",
     "homeUrl": "http://localhost:3000/",
