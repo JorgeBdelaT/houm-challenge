@@ -8,7 +8,7 @@ interface BeerProps {
   beer: Beer;
 }
 
-const Beer: NextPage<BeerProps> = ({ beer }) => {
+const BeerById: NextPage<BeerProps> = ({ beer }) => {
   return (
     <div>
       <Head>
@@ -41,4 +41,4 @@ export async function getStaticProps(
   return { props: { beer } };
 }
 
-export default Beer;
+export default BeerById;
